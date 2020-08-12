@@ -26,6 +26,9 @@ function length(str) {
  *
  */
 function reverse(str) {
+    for(let i=str.length-1; i>=0; i--){
+        console.log(i);
+    }
 }
 
 /**
@@ -41,6 +44,7 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+    return str.findIndex(char);
 }
 
 /**
@@ -71,12 +75,17 @@ function split(a, b) {
  */
 
 function sum(array) {
+    let sum = 0;
+    for(let i=0; i<=array.length-1; i++){
+        sum += array[i];
+    }
+    return sum;
 }
 
 /**
  *  配列の平均
  *
- *  渡された配列の合計を整数(小数切り捨て)で返す関数を実装してください。
+ *  渡された配列の平均を整数(小数切り捨て)で返す関数を実装してください。
  *
  *  example:
  *    [1, 3, 7, 9] => output: 5
@@ -88,6 +97,13 @@ function sum(array) {
  */
 
 function average(array) {
+    let sum = 0;
+    let ave = 0;
+    for(let i=0; i<=array.length-1; i++){
+        sum += array[i];
+        ave = Math.floor(sum / array.length-1);
+    }
+    return ave;
 }
 
 /**
