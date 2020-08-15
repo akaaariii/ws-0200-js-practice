@@ -12,6 +12,11 @@
  */
 
 function length(str) {
+    let count = 0;
+    for(let i=0; i<=str.length-1; i++)
+        if(!str.charAt(i) == "")
+            count++;
+    return count;
 }
 
 /**
@@ -26,9 +31,11 @@ function length(str) {
  *
  */
 function reverse(str) {
+    let myStr = "";
     for(let i=str.length-1; i>=0; i--){
-        console.log(i);
+        myStr += str.charAt(i);
     }
+    return myStr;
 }
 
 /**
@@ -44,7 +51,7 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
-    return str.findIndex(char);
+    return str.indexOf(char);
 }
 
 /**
@@ -60,6 +67,7 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+    return a.split(b);
 }
 
 /**
@@ -98,12 +106,15 @@ function sum(array) {
 
 function average(array) {
     let sum = 0;
-    let ave = 0;
-    for(let i=0; i<=array.length-1; i++){
-        sum += array[i];
-        ave = Math.floor(sum / array.length-1);
+    if(array == ""){
+        return 0;
+    } else {
+        for(let i=0; i<=array.length-1; i++){
+            sum += array[i];
+        }
     }
-    return ave;
+    let ave = sum / array.length;
+    return Math.floor(ave);
 }
 
 /**
@@ -119,6 +130,7 @@ function average(array) {
  */
 
 function concat(a, b) {
+    return a.concat(b);
 }
 
 /**
@@ -134,6 +146,13 @@ function concat(a, b) {
  */
 
 function size(array) {
+    // let count = 0;
+    // for(let i=0; i<=array.length-1; i++){
+    //     count++;
+    // }
+    // return count;
+
+    return array.length;
 }
 
 /**
@@ -142,7 +161,7 @@ function size(array) {
  *  配列の最大値と最小値を出力する関数を実装してください。
  *
  *  example:
- *    [1, 3, 7, 9] => max: 20, min: 1
+ *    [1, 3, 7, 9] => max: 9, min: 1
  *    [2, 5, 3, 6, 10, -1] => max: 10, min: -1
  *    [1] => max: 1, min: 1
  *    [] => 表示しない
@@ -150,6 +169,32 @@ function size(array) {
  */
 
 function minMax(array) {
+    let maxNum = array[0];
+    let minNum = array[0];
+    if(array == ""){
+        return null;
+    } else {
+        for(let i=1; i<=array.length-1; i++){
+            if(array[i] > maxNum){
+                maxNum = array[i];
+            }
+        }
+        for(let j=1; j<=array.length-1; j++){
+            if(array[j] < minNum){
+                minNum = array[j];
+            }
+        }
+        console.log("max: " + maxNum + ", min: " + minNum);
+    }
+
+    // array.sort();
+    // if(array == ""){
+    //     return null;
+    // } else {
+    //     let maxNum = array[array.length-1];
+    //     let minNum = array[0];
+    //     console.log("max: " + maxNum + ", min: " + minNum);
+    // }
 }
 
 /**
@@ -164,6 +209,15 @@ function minMax(array) {
  */
 
 function seq(num) {
+    let arr = [];
+    if(num == 0){
+        return arr;
+    } else {
+        for(let i=0; i<num; i++){
+            arr[i] = i;
+        }
+    }
+    return arr;
 }
 
 /**
@@ -179,6 +233,17 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+    let arr = [];
+    if(num % 2 == 1){
+        for(let i=0; i<(num+1)/2; i++){
+            arr[i] = (i*2)+1;
+        }
+    } else {
+        for(let j=0; j<num/2; j++){
+            arr[j] = (j*2)+1;
+        }
+    }
+    return arr;
 }
 
 /**
@@ -194,6 +259,10 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+    let myArr = array.filter(function(value) {
+        return value <= num;
+    })
+    return myArr;
 }
 
 
@@ -222,6 +291,19 @@ function filter(array, num) {
  */
 
 function fizzBuzz () {
+    let count = 1;
+    while(count <= 100){
+        if(count % 3 == 0 && count % 5 == 0){
+            console.log(count + " FizzBuzz");
+        } else if(count % 3 == 0){
+            console.log(count + " Fizz");
+        } else if(count % 5 == 0){
+            console.log(count + " Buzz");
+        } else {
+            console.log(count);
+        }
+        count++;
+    }
 }
 
 module.exports = {

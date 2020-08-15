@@ -58,17 +58,14 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+    let flag = false;
     for(let i=0; i<=array.length-1; i++){
-        let flag = true;
         for(let j=i+1; j<=array.length-1; j++){
-            if(array[i] == array[j]){
+            if(array[i] == array[j])
                 flag = true;
-            } else {
-                flag = false;
-            }
-        }
-        return flag;    
-    } 
+        } 
+    }
+    return flag;   
 }
 
 module.exports = {
