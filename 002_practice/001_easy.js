@@ -263,7 +263,7 @@ function filter(array, num) {
         return value <= num;
     })
     return myArr;
-}
+}l
 
 
 

@@ -11,11 +11,9 @@
  */
 function rotate(str, num) {
     let myStr = "";
-    if(num > 0){
-        
-    } else {
-
-    }
+    myStr = str.slice(str.length-num);
+    
+    
 }
 
 /**
