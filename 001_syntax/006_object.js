@@ -87,8 +87,7 @@ console.log(assignNumber('Bob','Mary','Ann','Mike'));
 
 function isDuplicate(array) { //?
     let obj = new Object();
-    let flag = false;
-    for(let i=0; i<=array.length-1; i++){
+    for(let i=0; i<array.length; i++){
         for(let j=i+1; j<=array.length-1; j++){
             if(array[i] == array[j]){
                 flag = true;

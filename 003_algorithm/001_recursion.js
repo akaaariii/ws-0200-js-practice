@@ -28,12 +28,22 @@ function sumSequence (n, sum = 0) {
  */
 
 function fibonacci (num, index = 0, array = []) {
-    array[index] = 1;
-    array[index+1] = array[index];
-    for(let i=2; i<num; i++){
-        array[i] = array[i-1] + array[i-2];
+    // array[index] = 1;
+    // array[index+1] = array[index];
+    // for(let i=2; i<num; i++){
+    //     array[i] = array[i-1] + array[i-2];
+    // }
+    // return array;
+
+    if (num == 0) {
+        return array
     }
-    return array;
+    if (index === 0 || index === 1) {
+        array.push(1)
+        return fibonacci(num - 1, index + 1, array)
+    }
+    array.push(array[index - 2] + array[index - 1])
+    return fibonacci(num - 1, index + 1, array)
 }
 
 

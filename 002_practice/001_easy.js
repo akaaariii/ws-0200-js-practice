@@ -171,15 +171,13 @@ function size(array) {
 function minMax(array) {
     let maxNum = array[0];
     let minNum = array[0];
-    if(array == ""){
+    if(array.length === 0){
         return null;
     } else {
         for(let i=1; i<=array.length-1; i++){
             if(array[i] > maxNum){
                 maxNum = array[i];
             }
-        }
-        for(let j=1; j<=array.length-1; j++){
             if(array[j] < minNum){
                 minNum = array[j];
             }

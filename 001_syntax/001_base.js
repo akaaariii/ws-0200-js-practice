@@ -59,7 +59,7 @@ function subtractTwoArgs(a, b) {
  *
  */
 function quotientTwoArgs(a, b) {
-    if(a == 0 || b == 0){
+    if(b === 0){
         return null;
     } else {
         return Math.floor(a / b);
@@ -87,11 +87,13 @@ function remainderTwoArgs(a) {
  *
  */
 function isEven(a) {
-    if(a % 2 == 0){
-        return true;
-    } else {
-        return false;
-    }
+    // if(a % 2 == 0){
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+
+    return a % 2 === 0;
 }
 
 /**

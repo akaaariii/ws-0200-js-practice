@@ -9,6 +9,20 @@
  */
 
 function bubbleSort (array) {
+    let swapped;
+    let x = array;
+    do {
+        swapped = false;
+        for(let i=0; i < array.length; i++){
+            if (x[i] > x[i+1]){
+               let temp = x[i];
+               x[i] = x[i+1];
+               x[i+1] = temp;
+               swapped = true;
+            }
+        }
+    } while (swapped);
+    return x; 
 }
 
 /**
@@ -22,6 +36,16 @@ function bubbleSort (array) {
  */
 
 function insertSort (array) {
+    for(let i=1; i < array.length; i++){
+        let j = i - 1;
+        let temp = array[i];
+        while (j >= 0 && array[j] > temp){
+          array[j + 1] = array[j];
+          j--;
+        }
+        array[j+1] = temp;
+      }
+      return array;
 }
 
 /**
@@ -51,7 +75,34 @@ function merge(left, right) {
  */
 
 function quickSort (a, start = 0, end = (a.length -1)) {
-};
+    const pivot = a[Math.floor((start + end) / 2)];//middle element
+    let left = start;
+    let right = end;
+    while (left <= right) {
+        while (a[left] < pivot) {
+            left++;
+        }
+        while (a[right] > pivot) {
+            right--;
+        }
+        if (left <= right) {
+            break;
+        }
+        let temp = a[left];
+        a[left] = a[right];
+        a[right] = temp;
+        left++;
+        right--;
+
+        if (start < left - 1) { //more elements on the left side of the pivot
+            quickSort(a, start, left - 1);
+        }
+        if (right + 1 < end) { //more elements on the right side of the pivot
+            quickSort(a, right + 1, end);
+        }
+    }
+    return a;
+}
 
 module.exports = {
   bubbleSort,

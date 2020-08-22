@@ -60,11 +60,13 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
-    if(a.includes(b)){
-        return true;
-    } else {
-        return false;
-    }
+    // if(a.includes(b)){
+    //     return true;
+    // } else {
+    //     return false;
+    // }
+
+    return a.includes(b);
 }
 
 /**

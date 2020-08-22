@@ -12,7 +12,7 @@
 function rotate(str, num) {
     let myStr = "";
     myStr = str.slice(str.length-num);
-    
+    //?
     
 }
 
@@ -48,6 +48,7 @@ function countStr(s1, s2) {
         count++;
     }
     return count;
+    //?
 }
 
 /**
@@ -65,17 +66,15 @@ function countStr(s1, s2) {
 function isPalindrome(str) {
     let left = 0;
     let right = str.length - 1
-    let flag = true;
     while(left <= right){
         if(str[left] == str[right]){
             left++;
             right--;
         } else {
-            flag = false;
-            break;
+            return false;
         }
     }
-    return flag;
+    return true;
 }
 
 /**
@@ -94,13 +93,13 @@ function isPalindrome(str) {
  */
 function isPrime(num) {
     let isPrime = false;
-    if(num == 1){
+    if(num === 1){
         isPrime = false;
-    } else if(num == 2){
+    } else if(num === 2){
         isPrime = true;
     } else {
         for(let i=2; i<num; i++){
-            if(num % i == 0){
+            if(num % i === 0){
                 isPrime = false;
                 break;
             } else {
@@ -128,14 +127,12 @@ function isPrime(num) {
  */
 function sumWithout4andNext(array) {
     let sum = 0;
-    if(array[i] == 4){
-        array[i] == array[i+1] == 0;
     for(let i=0; i<array.length; i++){
-        
-            sum += i;
+        if(!(array[i] === 4 || array[i-1] === 4)){
+            sum += array[i];
         }
-    return sum;
     }
+    return sum;
 }
 
 module.exports = {
